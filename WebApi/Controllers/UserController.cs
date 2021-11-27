@@ -53,7 +53,7 @@ namespace WebApi.Controllers
             }
 
             UserList.Add(newUser);
-            return Ok();
+            return Redirect("/Users");
         }
 
         [HttpPut("{id}")]
@@ -70,7 +70,7 @@ namespace WebApi.Controllers
             user.Email = updatedUser.Email == user.Email ? user.Email : updatedUser.Email;
             user.BirthDate = updatedUser.BirthDate == user.BirthDate ? user.BirthDate : updatedUser.BirthDate;
 
-            return Ok();
+            return Redirect("/Users");
         }
 
         [HttpDelete("{id}")]
@@ -84,7 +84,7 @@ namespace WebApi.Controllers
             }
 
             UserList.Remove(user);
-            return Ok();
+            return Redirect("/Users");
         }
     }
 }
